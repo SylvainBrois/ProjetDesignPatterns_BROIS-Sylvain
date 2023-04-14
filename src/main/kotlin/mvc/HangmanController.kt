@@ -1,5 +1,10 @@
 package mvc
 class HangmanController(private val model: HangmanModel, private val view: HangmanView) {
+    /**
+     * Gère l'avancement de la partie et tout le game system.
+     * La méthode masque le mot secret en remplacçant toutes les lettres par des "_".
+     * À chaque fois qu'une lettre est dévoilée, le jeu la dévoile dans le mot masqué.
+     */
     fun startGame() {
         view.showWelcomeMessage()
         while (!model.isGameOver && !model.isWon) {

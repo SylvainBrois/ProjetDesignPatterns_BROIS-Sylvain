@@ -7,6 +7,11 @@ data class HangmanModel(val word: String, val maxAttempts: Int) {
     var isWon = false
         get() = field && !isGameOver
 
+    /**
+     * Détermine si la lettre proposée par l'utilisateur est dans le mot ou non
+     * @param letter la lettre à vérifier
+     * @return true ou false selon si la lettre est présente ou non. Si la lettre n'est pas présente, le compteur d'erreur incrémente
+     */
     fun guessLetter(letter: Char): Boolean {
         if (isGameOver) return false
         guessedLetters.add(letter)
